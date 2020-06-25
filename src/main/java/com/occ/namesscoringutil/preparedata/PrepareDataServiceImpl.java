@@ -16,8 +16,8 @@ public class PrepareDataServiceImpl implements PrepareDataService {
     public List<String> prepareData(String loadedData) {
         List<String> listWithoutQuotes = new ArrayList<>();
         try {
-            Stream<String> words = Stream.of(loadedData);
-            List<String> letterWord = words.map(w -> w.split(","))
+            Stream<String> names = Stream.of(loadedData);
+            List<String> letterWord = names.map(w -> w.split(","))
                     .flatMap(Arrays::stream)
                     .sorted()
                     .collect(Collectors.toList());
