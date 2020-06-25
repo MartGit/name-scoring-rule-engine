@@ -11,4 +11,4 @@ In this Exercise, the following Assumptions were made:
   2. Based on the instructions given, I have designed the code in a way to encourage decoupling and separation of concerns. This will allow for maintainability and readability.
   In order to ensure optimized processing and cleaner, less boiler plate coding, I have used latest Java APIs. 
   
-  Finally, Spring boot and are used in order to ensure easy enhancement and well coordinated dependency and library management especially for integrating with third party APIs.
+  Finally, Spring boot and Maven are used in order to ensure easy enhancement and well coordinated dependency and library management especially for integrating with third party APIs.
