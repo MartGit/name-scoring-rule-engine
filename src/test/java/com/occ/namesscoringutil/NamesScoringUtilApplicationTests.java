@@ -10,4 +10,11 @@ class NamesScoringUtilApplicationTests {
     void contextLoads() {
     }
 
+
+    @Test
+    void run() {
+
+
+    }
+
 }

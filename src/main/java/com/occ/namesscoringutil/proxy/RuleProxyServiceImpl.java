@@ -1,14 +1,18 @@
-package com.occ.namesscoringutil.rule;
+package com.occ.namesscoringutil.proxy;
 
+import com.occ.namesscoringutil.rule.AnotherDepartmentScoringRule;
+import com.occ.namesscoringutil.rule.CurrentScoringRule;
+import com.occ.namesscoringutil.rule.FutureScoringRule;
+import com.occ.namesscoringutil.rule.RuleEngine;
 import com.occ.namesscoringutil.score.Score;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public class RuleProxy {
+public class RuleProxyServiceImpl implements RuleProxyService {
 
-    final static Logger LOGGER = LoggerFactory.getLogger(RuleProxy.class);
+    final static Logger LOGGER = LoggerFactory.getLogger(RuleProxyServiceImpl.class);
 
 
 
@@ -36,7 +40,7 @@ public class RuleProxy {
 
         LOGGER.info("AnotherDept Result Is " + anotherDeptResult);
 
-        return anotherDeptResult;
+        return currentResult;
 
     }
 }
