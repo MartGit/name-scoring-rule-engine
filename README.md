@@ -1,5 +1,5 @@
 # name-scoring-rule-engine
-##This is the API for Scoring Names Based on Algorithms
+## This is the API for Scoring Names Based on Algorithms
 
 In this Exercise, the following Assumptions were made:
 1. The Input Will Include a Flag to Identify which Rule/Algorithm the Score is expected to use. i have designated the following samples for the 3 expected variants of the algorithm:
