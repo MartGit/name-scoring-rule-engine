@@ -46,8 +46,6 @@ public class NamesScoringUtilApplication implements CommandLineRunner {
         return new RuleProxyServiceImpl();
    }
 
-
-
     @Override
     public void run(String... args) {
 
@@ -67,7 +65,7 @@ public class NamesScoringUtilApplication implements CommandLineRunner {
             }
 
             long totalScore = getRuleProxyService().registerAndProcessScoringRules(score);
-            LOGGER.info("Sum of All Scores " + totalScore);
+            LOGGER.info("Sum of All Scores Using "  + score.getScoreType() + " Algorithm Is " + totalScore);
 
         }
         catch (Exception e){
