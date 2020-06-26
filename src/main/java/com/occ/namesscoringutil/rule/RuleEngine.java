@@ -12,11 +12,11 @@ public class RuleEngine {
             rules = new ArrayList<>();
         }
 
-        List<IRule<Score, Score>> rules;
+        List<IRule<Score, Long>> rules;
 
-        public long rule(Score score, List<String> allNames) {
+        public Long rule(Score score, List<String> allNames) {
 
-            long result = 0;
+            Long result = 0L;
 
 
 
@@ -35,7 +35,7 @@ public class RuleEngine {
         }
 
 
-        public RuleEngine registerRule(IRule<Score, Score> rule) {
+        public RuleEngine registerRule(IRule<Score, Long> rule) {
             rules.add(rule);
             return this;
         }

@@ -5,7 +5,7 @@ import com.occ.namesscoringutil.score.Score;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FutureScoringRule implements IRule<Score, Score> {
+public class FutureScoringRule implements IRule<Score, Long> {
 
     List<String> names;
     String scoreType;
@@ -16,18 +16,18 @@ public class FutureScoringRule implements IRule<Score, Score> {
     }
 
     @Override
-    public long processScore(List<String> allWords) {
+    public Long processScore(List<String> allWords) {
 
-        long futureRes = calculateeScoreForAllNames(allWords);
+        Long futureRes = calculateeScoreForAllNames(allWords);
 
         return futureRes;
     }
 
 
-    private Integer calculateeScoreForAllNames(List<String> allWords) {
+    private Long calculateeScoreForAllNames(List<String> allWords) {
         List<Integer> listOfScores = calculateScoreForAList(allWords);
         return listOfScores.stream()
-                .reduce(0, Integer::sum);
+                .reduce(0, Integer::sum).longValue();
     }
 
     private static List<Integer> calculateScoreForAList(List<String> allWords) {

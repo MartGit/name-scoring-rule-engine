@@ -17,19 +17,6 @@ public class Score {
     public ScoreType getScoreType() {
         return scoreType;
     }
-
-    public void setScoreType(ScoreType scoreType) {
-        this.scoreType = scoreType;
-    }
-
-    public List<String> getNames() {
-        return names;
-    }
-
-    public void setNames(List<String> names) {
-        this.names = names;
-    }
-
     public enum ScoreType {
         CURRENT, FUTURE, ANOTHERDEPARTMENT
     }
