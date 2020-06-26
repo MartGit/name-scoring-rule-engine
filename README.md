@@ -25,13 +25,10 @@ In this exercise, the following assumptions were made:
 3. cd to name-scoring-rule-engine
 3. Run mvn clean install 
 4. Upon successful build run the following command
-      - mvn spring-boot:run -Dspring-boot.run.arguments="[Path to file containing the names to score]" 
-         - Please replace everything inside the double quotes with your file path
+      - mvn spring-boot:run -Dspring-boot.run.arguments="[Path to file containing the names to score] [The Algorithm to Use]"
+         - Please replace [Path to file containing the names to score] with your file path and replace the [The Algorithm to Use] with the first letter of any of the Algorithms already mentioned above that you intend to use for instance "C" for CURRENT.
 
 ## Expected OutPut
 The Output is Expected as following sample output
-   - Current Result Is 3185
-   - Future Result Is 2641
-   - AnotherDept Result Is 5361
-   - Sum of All Scores 3185
+   - Sum of All Scores Using CURRENT Algorithm Is 3185
       
