@@ -13,19 +13,11 @@ public class RuleEngine {
         }
 
         List<IRule<Score, Long>> rules;
-
-        public Long rule(Score score, List<String> allNames) {
-
+        public Long rule(Score score) {
             Long result = 0L;
-
-
-
             for (int i = 0; i < rules.size(); i++) {
-
                 if (rules.get(i).toString().toLowerCase().contains(score.getScoreType().toString().toLowerCase())) {
-
-                    result = rules.get(i).processScore(allNames);
-
+                    result = rules.get(i).processScore(score);
                 } else {
 
                     new RuntimeException("No Matching rule found");

@@ -1,8 +1,8 @@
 package com.occ.namesscoringutil.rule;
 
-import java.util.List;
+import com.occ.namesscoringutil.score.Score;
 
 public interface IRule<I, O> {
 
-    Long processScore(List<String> allNames);
+    Long processScore(Score score);
 }

@@ -2,7 +2,6 @@ package com.occ.namesscoringutil.rule;
 
 import com.occ.namesscoringutil.score.Score;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,7 @@ class FutureScoringRuleTest {
     @Test
     void processScore() {
         List<String> namesList = new ArrayList<>();
+        Score score = new Score();
         namesList.add("BARBARA");
         namesList.add("HAI");
         namesList.add("JERE");
@@ -22,9 +22,11 @@ class FutureScoringRuleTest {
         namesList.add("PATRICIA");
         namesList.add("SHON");
         namesList.add("VINCENZO");
-        FutureScoringRule futureScoringRule = new FutureScoringRule("FUTURE", namesList);
+        score.setNames(namesList);
+        score.setScoreType(Score.ScoreType.FUTURE);
+        FutureScoringRule futureScoringRule = new FutureScoringRule(score);
 
-        long result = futureScoringRule.processScore(namesList);
+        long result = futureScoringRule.processScore(score);
 
        assertEquals(2641, result);
     }

@@ -1,5 +1,6 @@
 package com.occ.namesscoringutil.rule;
 
+import com.occ.namesscoringutil.score.Score;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ class CurrentScoringRuleTest {
     void processScore() {
 
         List<String> namesList = new ArrayList<>();
+        Score score = new Score();
         namesList.add("BARBARA");
         namesList.add("HAI");
         namesList.add("JERE");
@@ -22,9 +24,11 @@ class CurrentScoringRuleTest {
         namesList.add("PATRICIA");
         namesList.add("SHON");
         namesList.add("VINCENZO");
-        CurrentScoringRule currentScoringRule = new CurrentScoringRule("CURRENT", namesList);
+        score.setNames(namesList);
+        score.setScoreType(Score.ScoreType.CURRENT);
+        CurrentScoringRule currentScoringRule = new CurrentScoringRule(score);
 
-        long result = currentScoringRule.processScore(namesList);
+        long result = currentScoringRule.processScore(score);
 
         assertEquals(3185, result);
     }

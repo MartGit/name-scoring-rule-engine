@@ -1,8 +1,8 @@
 package com.occ.namesscoringutil.proxy;
 
-import java.util.List;
+import com.occ.namesscoringutil.score.Score;
 
 public interface RuleProxyService {
 
-    long registerAndProcessScoringRules(String scoreType, List<String> names);
+    long registerAndProcessScoringRules(Score score);
 }

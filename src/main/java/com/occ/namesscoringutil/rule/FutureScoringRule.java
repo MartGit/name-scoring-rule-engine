@@ -7,16 +7,15 @@ import java.util.stream.Collectors;
 
 public class FutureScoringRule implements IRule<Score, Long> {
 
-    List<String> names;
-    String scoreType;
+    Score score;
 
-    public FutureScoringRule(String scoreType, List<String> names) {
-        this.names = names;
-        this.scoreType = scoreType;
+    public FutureScoringRule(Score score) {
+        this.score = score;
     }
 
     @Override
-    public Long processScore(List<String> allWords) {
+    public Long processScore(Score score) {
+        List<String> allWords = score.getNames();
 
         Long futureRes = calculateeScoreForAllNames(allWords);
 

@@ -6,8 +6,6 @@ import org.mockito.Mock;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ScoreTest {
 @Mock
 private Score.ScoreType scoreType;
@@ -21,7 +19,8 @@ private Score.ScoreType scoreType;
         namesList.add("LINDA");
         namesList.add("BARBARA");
         namesList.add("VINCENZO");
-        Score score = new Score(scoreType, namesList);
+        Score score = new Score();
+        score.setScoreType(scoreType);
                 score.getScoreType();
     }
 

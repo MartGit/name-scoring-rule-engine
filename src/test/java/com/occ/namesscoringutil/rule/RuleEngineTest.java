@@ -7,8 +7,6 @@ import org.mockito.Mock;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RuleEngineTest {
 
     @Mock
@@ -20,14 +18,16 @@ class RuleEngineTest {
     @Test
     void rule() {
         RuleEngine engine = new RuleEngine();
+        Score score = new Score();
         List<String> namesList = new ArrayList<>();
         namesList.add("MARY");
         namesList.add("PATRICIA");
         namesList.add("LINDA");
         namesList.add("BARBARA");
         namesList.add("VINCENZO");
-
-        engine.rule(scoree, namesList);
+        score.setNames(namesList);
+        score.setScoreType(Score.ScoreType.CURRENT);
+        engine.rule(score);
     }
 
     @Test

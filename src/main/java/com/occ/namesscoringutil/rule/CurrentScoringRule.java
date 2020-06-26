@@ -8,17 +8,15 @@ import java.util.stream.Collectors;
 public class CurrentScoringRule implements IRule<Score, Long> {
 
 
-    List<String> names;
-    String scoreType;
+    Score score;
 
-    public CurrentScoringRule(String scoreType, List<String> names) {
-        this.names = names;
-        this.scoreType = scoreType;
+    public CurrentScoringRule(Score score) {
+        this.score = score;
     }
 
     @Override
-    public Long processScore(List<String> allWords) {
-
+    public Long processScore(Score score) {
+        List<String> allWords = score.getNames();
 
         Long res = calculateeScoreForAllNames(allWords);
 

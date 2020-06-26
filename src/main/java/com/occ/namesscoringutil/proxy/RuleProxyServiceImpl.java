@@ -8,39 +8,35 @@ import com.occ.namesscoringutil.score.Score;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-
 public class RuleProxyServiceImpl implements RuleProxyService {
 
     final static Logger LOGGER = LoggerFactory.getLogger(RuleProxyServiceImpl.class);
 
 
 
-    public long registerAndProcessScoringRules(String scoreType, List<String> names) {
+    public long registerAndProcessScoringRules(Score score) {
 
         RuleEngine ruleEngine = new RuleEngine();
-        ruleEngine
-                .registerRule(new CurrentScoringRule(scoreType, names))
-                .registerRule(new FutureScoringRule(scoreType, names))
-                .registerRule(new AnotherDepartmentScoringRule(scoreType, names));
+        Long result = 0L;
+        if (score.getScoreType().equals(Score.ScoreType.CURRENT)) {
+            ruleEngine
+                    .registerRule(new CurrentScoringRule(score));
+            result = ruleEngine.rule(score);
+        }
+        if (score.getScoreType().equals(Score.ScoreType.FUTURE)) {
+            ruleEngine
+                    .registerRule(new FutureScoringRule(score));
+            result = ruleEngine.rule(score);
+        }
+        if (score.getScoreType().equals(Score.ScoreType.ANOTHERDEPARTMENT)) {
+            ruleEngine
+                    .registerRule(new AnotherDepartmentScoringRule(score));
+            result = ruleEngine.rule(score);
+        }
 
-        Score currentScore = new Score(Score.ScoreType.CURRENT, names);
-        Score futureScore = new Score(Score.ScoreType.FUTURE, names);
-        Score anotherDeptScore = new Score(Score.ScoreType.ANOTHERDEPARTMENT, names);
+        LOGGER.info(" Result Is " + result);
 
-        long currentResult = ruleEngine.rule(currentScore, names);
-
-        long futureResult = ruleEngine.rule(futureScore, names);
-
-        long anotherDeptResult = ruleEngine.rule(anotherDeptScore, names);
-
-        LOGGER.info("Current Result Is " + currentResult);
-
-        LOGGER.info("Future Result Is " + futureResult);
-
-        LOGGER.info("AnotherDept Result Is " + anotherDeptResult);
-
-        return currentResult;
+        return result;
 
     }
 }

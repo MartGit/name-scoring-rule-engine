@@ -8,18 +8,16 @@ import java.util.stream.Collectors;
 public class AnotherDepartmentScoringRule implements IRule<Score, Long> {
 
 
-    List<String> names;
-    String scoreType;
+    Score score;
 
-    public AnotherDepartmentScoringRule(String scoreType, List<String> names) {
-        this.names = names;
-        this.scoreType = scoreType;
+    public AnotherDepartmentScoringRule(Score score) {
+        this.score = score;
     }
 
 
     @Override
-    public Long processScore(List<String> allWords) {
-
+    public Long processScore(Score score) {
+        List<String> allWords = score.getNames();
         Long result =  calculateeScoreForAllNames(allWords);
 
         return result;
