@@ -7,12 +7,12 @@ In this exercise, the following assumptions were made:
      - "FUTURE" -- For Future Algorithm Implementation
      - "ANOTHERDEPARTMENT" -- For Another Department's Algorithm Implementation
           - Please note the minor adjustments were made to differentiate those algorithms for now since there is no defined algorithm for Future and Another Department Yet
-  
-  2. Based on the instructions given, I have designed the code in a way to encourage decoupling and separation of concerns. This will allow for maintainability and readability.
+  2. The Input file type/format remains constant i.e must always be a text file and not any other type like excel, csv, etc
+  3. Based on the instructions given, I have designed the code in a way to encourage decoupling and separation of concerns. This will allow for maintainability and readability.
   In order to ensure optimized processing and cleaner, less boiler plate coding, I have used latest Java APIs where necessary. 
   JUnit Tests have also been written for almost all classes and passing.
   
-  3. Finally, Spring boot and Maven are used in order to ensure easy enhancement and well coordinated dependency and library management especially for integrating with third party APIs.
+  4. Finally, Spring boot and Maven are used in order to ensure easy enhancement and well coordinated dependency and library management especially for integrating with third party APIs.
   
 ## Assumptions before Runnig the Code
 1. User must have Java Installed
