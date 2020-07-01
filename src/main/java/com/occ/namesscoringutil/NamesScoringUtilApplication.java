@@ -26,7 +26,7 @@ public class NamesScoringUtilApplication implements CommandLineRunner {
 
             SpringApplication.run(NamesScoringUtilApplication.class, args);
         } catch (Exception e) {
-            LOGGER.info("You Are Required to Enter the Name File Path " +  e.getMessage());
+            LOGGER.info("You Are Required to Enter the Name File Path and the Algorithm to Use" +  e.getMessage());
         }
     }
 
