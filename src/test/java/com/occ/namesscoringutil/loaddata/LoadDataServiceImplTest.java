@@ -24,11 +24,10 @@ public class LoadDataServiceImplTest {
     void loadData() {
 
         LoadDataServiceImpl loadDataService = new LoadDataServiceImpl();
-        String filePath = "/Users/apple/namescoringapplication/src/main/resources/fewNames.txt";
+        String filePath = "fewNames.txt";
         String fileContent = "\"MARY\",\"PATRICIA\",\"LINDA\",\"BARBARA\",\"VINCENZO\",\"SHON\",\"LYNWOOD\",\"JERE\",\"HAI\"";
-        System.out.println("loadservice is " + loadDataService);
         String result = loadDataService.loadData(filePath);
 
-        assertEquals(fileContent, result);
+        assertEquals(fileContent.trim(), result.trim());
     }
 }
