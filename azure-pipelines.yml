@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- template: vars/global.yml
+
 steps:
 - task: Maven@3
   inputs:

@@ -1,0 +1,2 @@
+variables:
+  isMain:              ${{ eq(variables['synopsys-detect.version'], '1.2.0') }}s
