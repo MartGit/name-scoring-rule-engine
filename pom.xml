@@ -43,6 +43,49 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!--<configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-Djavax.net.ssl.trustStore=${env.MAVEN_TRUST_STORE}</argument>
+                        <argument>-jar</argument>
+                        <argument>
+                            ${settings.localRepository}/com/github/blackducksoftware/synopsys-detect/${synopsys-detect.version}/synopsys-detect-${synopsys-detect.version}.jar
+                        </argument>
+                        <argument>&#45;&#45;blackduck.url=https://bdscan.daimler.com/</argument>
+                        <argument>&#45;&#45;blackduck.proxy.host=${env.BD_PROXY}</argument>
+                        <argument>&#45;&#45;blackduck.proxy.port=3128</argument>
+                        <argument>&#45;&#45;detect.project.name=sme-online</argument>
+                        <argument>&#45;&#45;blackduck.api.token=${bd-token}</argument>
+                        <argument>&#45;&#45;detect.maven.path=${env.M2_HOME}/bin/${mvn}</argument>
+                        <argument>&#45;&#45;detect.maven.include.plugins=true</argument>
+                        <argument>&#45;&#45;detect.maven.build.command=-s ${env.MAVEN_SETTINGS_XML} -Djavax.net.ssl.trustStore=${env.MAVEN_TRUST_STORE}
+                        </argument>
+                        <argument>&#45;&#45;detect.included.detector.types=maven,pip,npm</argument>
+                        <argument>
+                            &#45;&#45;detect.blackduck.signature.scanner.exclusion.name.patterns=*target*,*/target,*\target
+                        </argument>
+                        <argument>&#45;&#45;detect.bdio2.enabled=false</argument>
+                        <argument>&#45;&#45;detect.project.version.phase=${versionPhase}</argument>
+                        <argument>&#45;&#45;detect.code.location.name=${project.version}</argument>
+                    </arguments>
+                </configuration>-->
+                <configuration>
+                    <executable>bash</executable>
+                    <commandlineArgs>test.sh</commandlineArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
