@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo This Version is $(synopsys-detect.version)
+echo This Version is ${synopsys-detect.version}
