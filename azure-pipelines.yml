@@ -25,6 +25,4 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- script:
-    echo In script we see ${{ variables.synopsys-detect.version }}
-    echo In script we have $(synopsys-detect.version)
+
