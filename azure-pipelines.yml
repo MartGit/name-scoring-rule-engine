@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- name: synopsys-detect.version
+- name: version
   value: 1.2.0
 
 steps:
@@ -20,7 +20,7 @@ steps:
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
-    synopsys-detect.version: $(synopsys-detect.version)
+    version: $(version)
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
