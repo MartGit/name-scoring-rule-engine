@@ -10,7 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- template: vars/global.yml
+- name: synopsys-detect.version
+- value: 1.2.0
 
 steps:
 - task: Maven@3
@@ -19,7 +20,11 @@ steps:
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
+    synopsys-detect.version: $(synopsys-detect.version)
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- scripts: |
+    echo In script we see ${{ variables.synopsys-detect.version }}
+    echo In script we have $(synopsys-detect.version)
