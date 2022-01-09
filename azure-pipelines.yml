@@ -12,6 +12,8 @@ pool:
 variables:
 - name: version
   value: 1.2.0
+- name: bd_proxy
+  value: http://bd_proxy:8080
 
 steps:
 - task: Maven@3

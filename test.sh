@@ -6,3 +6,4 @@ echo This token is ${BD_TOKEN}
 echo This trust store path is ${MAVEN_TRUST_STORE}
 echo This key store path is ${MAVEN_KEY_STORE}
 echo This settings xml path is ${MAVEN_SETTINGS_XML}
+echo This settings xml path is ${M2_HOME}
