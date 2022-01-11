@@ -131,12 +131,12 @@
                         <configuration>
                             <tasks>
                                 <echo>Displaying value of pom.xml element</echo>
-                                <echo>[VERSION] ${version}</echo>
-                                <echo>[BD_PROXY] ${bd_proxy}</echo>
-                                <echo>[BD_TOKEN] ${bd_token}</echo>
-                                <echo>[MAVEN_TRUST_STORE] ${maven_trust_store}</echo>
-                                <echo>[MAVEN_KEY_STORE] ${pmaven_key_store}</echo>
-                                <echo>[MAVEN_SETTINGS_XML] ${pmaven_settins_xml}</echo>
+                                <echo>[VERSION] ${VERSION}</echo>
+                                <echo>[BD_PROXY] ${BD_PROXY}</echo>
+                                <echo>[BD_TOKEN] ${BD_TOKEN}</echo>
+                                <echo>[MAVEN_TRUST_STORE] ${MAVEN_TRUST_STORE}</echo>
+                                <echo>[MAVEN_KEY_STORE] ${MAVEN_KEY_STORE}</echo>
+                                <echo>[MAVEN_SETTINGS_XML] ${MAVEN_SETTINGS_XML}</echo>
                             </tasks>
                         </configuration>
                     </execution>
