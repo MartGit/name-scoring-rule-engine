@@ -14,6 +14,12 @@ variables:
   value: 1.2.0
 - name: bd_proxy
   value: http://bd_proxy:8080
+- name: maven_key_store
+  value: p://project/key_store
+- name: maven_trust_store
+  value: p://project/trust_store
+- name: maven_settings_xml
+  value: p://project/settings.xml
 
 steps:
 - task: Maven@3
