@@ -65,6 +65,10 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
+                <!--<configuration>-->
+                    <!--<executable>java</executable>-->
+                    <!--<version>$(version)</version>-->
+                <!--</configuration>-->
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -73,30 +77,30 @@
                         </goals>
                     </execution>
                 </executions>
-                <!--<configuration>
+               <!-- <configuration>
                     <executable>java</executable>
                     <arguments>
+                        <argument>-Djavax.net.ssl.trustStore=$(env.MAVEN_TRUST_STORE)</argument>
                         <argument>-jar</argument>
-                        <argument>-Djavax.net.ssl.trustStore=${env.MAVEN_TRUST_STORE}</argument>
-                        <argument>
+                        &lt;!&ndash;<argument>
                             ${settings.localRepository}/com/github/blackducksoftware/synopsys-detect/$(synopsys-detect.version)/synopsys-detect-$(synopsys-detect.version).jar
                         </argument>
-                        <argument>&#45;&#45;blackduck.url=https://bdscan.daimler.com/</argument>
+                        <argument>&#45;&#45;blackduck.url=https://bdscan.daimler.com/</argument>&ndash;&gt;
                         <argument>&#45;&#45;blackduck.proxy.host=${bd_proxy}</argument>
-                        <argument>&#45;&#45;blackduck.proxy.port=3128</argument>
-                         <argument>&#45;&#45;detect.project.name=sme-online</argument>
-                        <argument>&#45;&#45;blackduck.api.token=${bd-token}</argument>
-                        <argument>&#45;&#45;detect.maven.path=${env.M2_HOME}/bin/${mvn}</argument>
+                        &lt;!&ndash;<argument>&#45;&#45;blackduck.proxy.port=3128</argument>
+                         <argument>&#45;&#45;detect.project.name=sme-online</argument>&ndash;&gt;
+                        &lt;!&ndash;<argument>&#45;&#45;blackduck.api.token=$(bd-token)</argument>&ndash;&gt;
+                        &lt;!&ndash;<argument>&#45;&#45;detect.maven.path=$(env.M2_HOME)/bin/$(mvn)</argument>
                         <argument>&#45;&#45;detect.maven.include.plugins=true</argument>
-                        <argument>&#45;&#45;detect.maven.build.command=-s ${env.MAVEN_SETTINGS_XML} -Djavax.net.ssl.trustStore=${env.MAVEN_TRUST_STORE}
+                        <argument>&#45;&#45;detect.maven.build.command=-s $(env.MAVEN_SETTINGS_XML) -Djavax.net.ssl.trustStore=$(env.MAVEN_TRUST_STORE)
                         </argument>
                         <argument>&#45;&#45;detect.included.detector.types=maven,pip,npm</argument>
                         <argument>
                             &#45;&#45;detect.blackduck.signature.scanner.exclusion.name.patterns=*target*,*/target,*\target
                         </argument>
                         <argument>&#45;&#45;detect.bdio2.enabled=false</argument>
-                        <argument>&#45;&#45;detect.project.version.phase=${versionPhase}</argument>
-                        <argument>&#45;&#45;detect.code.location.name=${project.version}</argument>
+                        <argument>&#45;&#45;detect.project.version.phase=$(versionPhase)</argument>
+                        <argument>&#45;&#45;detect.code.location.name=${project.version}</argument>&ndash;&gt;
                     </arguments>
                 </configuration>-->
                 <configuration>
