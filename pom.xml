@@ -133,7 +133,7 @@
                                 <echo>Displaying value of pom.xml element</echo>
                                 <echo>[VERSION] ${VERSION}</echo>
                                 <echo>[BD_PROXY] ${BD_PROXY}</echo>
-                                <echo>[BD_TOKEN] $(bd_token)</echo>
+                                <echo>[BD_TOKEN] ${bd_token}</echo>
                                 <echo>[MAVEN_TRUST_STORE] ${MAVEN_TRUST_STORE}</echo>
                                 <echo>[MAVEN_KEY_STORE] ${MAVEN_KEY_STORE}</echo>
                                 <echo>[MAVEN_SETTINGS_XML] ${MAVEN_SETTINGS_XML}</echo>
