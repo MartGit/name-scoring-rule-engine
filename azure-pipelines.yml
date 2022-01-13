@@ -10,18 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- name: version
-  value: 1.2.0
-- name: bd_proxy
-  value: http://bd_proxy:8080
-- name: maven_key_store
-  value: p://project/key_store
-- name: maven_trust_store
-  value: p://project/trust_store
-- name: maven_settings_xml
-  value: p://project/settings.xml
-- name: bd_token
-  value: $(MY_MAPPED_ENV_VAR)
+  BD_TOKEN: $(bd_token)
 
 steps:
 - task: Maven@3
@@ -31,6 +20,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     version: $(version)
+    bdToken: $(BD_TOKEN)
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
