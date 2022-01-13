@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  BD_TOKEN: $(bd_token)
+  BD_TOKEN: ${bd_token}
 
 steps:
 - task: Maven@3
