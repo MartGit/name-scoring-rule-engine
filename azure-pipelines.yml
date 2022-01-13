@@ -20,6 +20,8 @@ variables:
   value: p://project/trust_store
 - name: maven_settings_xml
   value: p://project/settings.xml
+- name: bd_token
+  value: $(MY_MAPPED_ENV_VAR)
 
 steps:
 - task: Maven@3
@@ -33,4 +35,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+  env:
+      MY_MAPPED_ENV_VAR: $(bd_token)
 
